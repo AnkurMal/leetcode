@@ -11,9 +11,10 @@ impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
         let mut max_len = 0;
         let mut char_vec = vec![];
+        let str_len = s.len();
 
-        for i in 0..s.len() {
-            if max_len < (s.len()-i) {
+        for i in 0..str_len {
+            if max_len < (str_len-i) {
                 char_vec.clear();
                 let mut len = 0;
 
@@ -29,6 +30,9 @@ impl Solution {
                 if len>max_len {
                     max_len = len
                 }
+            }
+            else {
+                break;
             }
         }
 
