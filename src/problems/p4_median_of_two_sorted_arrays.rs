@@ -15,7 +15,7 @@ impl Solution {
 
         let len = nums1.len();
         if len%2!=0 {
-            let index = ((len+1)/2)-1;
+            let index = len.div_ceil(2)-1;
             nums1[index] as f64
         }   
         else {

@@ -4,5 +4,34 @@ mod problems;
 use problems::*;
 
 fn main() {
+    let (s, num_rows) = ("ABSC", 2);
+    let fluc = num_rows*2 - 2;
 
+    let s = s.as_bytes();
+    let mut new = vec![];
+
+    let mut i = 0;
+    while let Some(&byte) = s.get(i*fluc) {
+        new.push(byte);
+        i += 1;
+    }
+
+    for i in 1..num_rows-1 {
+    let mut next = i;
+    let mut flip = fluc - i*2;
+
+    while let Some(&byte) = s.get(next) {
+        new.push(byte);
+        next += flip;
+        flip = fluc.abs_diff(flip);
+    }
+}
+
+    i = num_rows-1;
+    while let Some(&byte) = s.get(i) {
+        new.push(byte);
+        i += fluc;
+    }
+
+    println!("{}", String::from_utf8(new).unwrap())
 }
