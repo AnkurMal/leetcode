@@ -7,20 +7,6 @@ use super::Solution;
  */
 
 // @lc code=start
-macro_rules! symbol_to_value {
-    ($val: expr) => {{
-        match $val {
-            'I' => 1,
-            'V' => 5,
-            'X' => 10,
-            'L' => 50,
-            'C' => 100,
-            'D' => 500,
-            _ => 1000,
-        }
-    }};
-}
-
 impl Solution {
     pub fn roman_to_int(s: String) -> i32 {
         let mut res = 0;
@@ -34,21 +20,33 @@ impl Solution {
                     || (rm == 'X' && (ch == 'L' || ch == 'C'))
                     || (rm == 'C' && (ch == 'D' || ch == 'M'))
                 {
-                    res += symbol_to_value!(ch) - symbol_to_value!(rm);
+                    res += map_value(ch) - map_value(rm);
 
                     i += 2;
                     continue;
                 } else {
-                    res += symbol_to_value!(rm);
+                    res += map_value(rm);
                 }
             } else {
-                res += symbol_to_value!(rm);
+                res += map_value(rm);
             }
 
             i += 1;
         }
 
         res
+    }
+}
+
+fn map_value(val: char) -> i32 {
+    match val {
+        'I' => 1,
+        'V' => 5,
+        'X' => 10,
+        'L' => 50,
+        'C' => 100,
+        'D' => 500,
+        _ => 1000,
     }
 }
 // @lc code=end
