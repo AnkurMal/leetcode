@@ -14,15 +14,13 @@ impl Solution {
         nums1.sort();
 
         let len = nums1.len();
-        if len%2!=0 {
-            let index = len.div_ceil(2)-1;
+        if len % 2 != 0 {
+            let index = len.div_ceil(2) - 1;
             nums1[index] as f64
-        }   
-        else {
-            let index = len/2;
-            (nums1[index]+nums1[index-1]) as f64/2.
-        }     
+        } else {
+            let index = len / 2;
+            (nums1[index] + nums1[index - 1]) as f64 / 2.
+        }
     }
 }
 // @lc code=end
-

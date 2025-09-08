@@ -14,7 +14,7 @@ impl Solution {
         let str_len = s.len();
 
         for i in 0..str_len {
-            if max_len < (str_len-i) {
+            if max_len < (str_len - i) {
                 char_vec.clear();
                 let mut len = 0;
 
@@ -22,16 +22,14 @@ impl Solution {
                     if !char_vec.contains(&j) {
                         char_vec.push(j);
                         len += 1;
-                    }
-                    else {
+                    } else {
                         break;
                     }
                 }
-                if len>max_len {
+                if len > max_len {
                     max_len = len
                 }
-            }
-            else {
+            } else {
                 break;
             }
         }
@@ -40,4 +38,3 @@ impl Solution {
     }
 }
 // @lc code=end
-

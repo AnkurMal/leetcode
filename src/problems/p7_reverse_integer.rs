@@ -10,7 +10,9 @@ use super::Solution;
 impl Solution {
     pub fn reverse(x: i32) -> i32 {
         let mut neg = false;
-        if x<0 {neg = true};
+        if x < 0 {
+            neg = true
+        };
 
         let x = x.abs().to_string();
         let mut x = x.chars().rev().collect::<String>();
@@ -23,4 +25,3 @@ impl Solution {
     }
 }
 // @lc code=end
-

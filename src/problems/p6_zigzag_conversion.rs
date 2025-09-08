@@ -9,7 +9,9 @@ use super::Solution;
 // @lc code=start
 impl Solution {
     pub fn convert(s: String, num_rows: i32) -> String {
-        if num_rows == 1 {return  s;}
+        if num_rows == 1 {
+            return s;
+        }
 
         let num_rows = num_rows as usize;
         let fluc = num_rows * 2 - 2;

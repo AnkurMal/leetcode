@@ -16,10 +16,10 @@ impl Solution {
             let (mut l, mut r) = (i, i);
 
             while r < s.len() && bytes[l] == bytes[r] {
-                 if r - l + 1 > longest.len() {
+                if r - l + 1 > longest.len() {
                     longest = &bytes[l..=r];
                 }
-                
+
                 if l == 0 {
                     break;
                 }
@@ -32,7 +32,7 @@ impl Solution {
                 if r - l + 1 > longest.len() {
                     longest = &bytes[l..=r];
                 }
-                
+
                 if l == 0 {
                     break;
                 }
