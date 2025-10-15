@@ -16,3 +16,4 @@ pub mod p12_integer_to_roman;
 pub mod p13_roman_to_integer;
 pub mod p14_longest_common_prefix;
 pub mod p15_3_sum;
+pub mod p30_substring_with_concatenation_of_all_words;

@@ -14,7 +14,7 @@ impl Solution {
         nums1.sort();
 
         let len = nums1.len();
-        if len % 2 != 0 {
+        if !len.is_multiple_of(2) {
             let index = len.div_ceil(2) - 1;
             nums1[index] as f64
         } else {
