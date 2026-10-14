@@ -2,8 +2,8 @@ use super::Solution;
 
 impl Solution {
     const RANGE: [char; 9] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    
-    pub fn solve_sudoku(board: &mut Vec<Vec<char>>) {
+
+    pub fn solve_sudoku(board: &mut [Vec<char>]) {
         Self::solve(board);
     }
 
@@ -30,7 +30,7 @@ impl Solution {
     }
 
     fn check(board: &mut [Vec<char>], row: usize, col: usize, num: char) -> bool {
-        if board[row].iter().any(|&val| val == num) {
+        if board[row].contains(&num) {
             return false;
         }
         if board.iter().any(|r| r[col] == num) {

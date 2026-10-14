@@ -13,6 +13,7 @@ pub mod p30_substring_with_concatenation_of_all_words;
 pub mod p37_sudoku_solver;
 pub mod p38_count_and_say;
 pub mod p3_longest_substring_without_repeating_characters;
+pub mod p44_wildcard_matching;
 pub mod p4_median_of_two_sorted_arrays;
 pub mod p5_longest_palindromic_substring;
 pub mod p6_zigzag_conversion;
